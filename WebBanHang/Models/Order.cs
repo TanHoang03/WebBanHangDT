@@ -10,11 +10,11 @@ namespace WebBanHang.Models
     {
         public int Id { get; set; }
         public DateTime OrderDate { get; set; }
-        [Required(ErrorMessage ="Chưa nhập họ tên người đặt ")]
+        [Required(ErrorMessage ="Vui lòng nhập họ tên !!! ")]
         public string CustomerName { get; set; }
-        [Required(ErrorMessage = "Chưa nhập địa chỉ nhận hàng ")]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ !!! ")]
         public string Address { get; set; }
-        [Required(ErrorMessage = "Chưa nhập số điện thoại liên hệ ")]
+        [Required(ErrorMessage = "Vui lòng nhập số điện thoại !!! ")]
         public string Phone { get; set; }
         public double Total { get; set; }
         public string State { get; set; }
