@@ -8,6 +8,7 @@ using WebBanHang.Helpers;
 
 namespace WebBanHang.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class CartController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -62,7 +63,6 @@ namespace WebBanHang.Areas.Customer.Controllers
             }
             return Json(new { msg = "erro" });
         }
-
         public IActionResult Remove(int productId)
         {
             var product = _db.Products.FirstOrDefault(x => x.Id == productId);
@@ -80,7 +80,6 @@ namespace WebBanHang.Areas.Customer.Controllers
             return NotFound();
         }
 
-
         public IActionResult AddToCartAPI(int productId)
         {
             var product = _db.Products.FirstOrDefault(x => x.Id == productId);
@@ -97,8 +96,6 @@ namespace WebBanHang.Areas.Customer.Controllers
             }
             return Json(new { msg = "error" });
         }
-
-
         public IActionResult GetQuantityOfCart()
         {
             Cart cart = HttpContext.Session.GetJson<Cart>("CART");
