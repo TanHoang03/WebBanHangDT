@@ -68,11 +68,12 @@ namespace WebBanHang
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                   name: "areas",
                   pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}"
                 );
-                endpoints.MapRazorPages();
+                
             });
         }
     }
